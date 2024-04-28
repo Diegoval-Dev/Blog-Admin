@@ -11,6 +11,7 @@ export default defineConfig({
       '@hooks': '/src/hooks',
       '@styles': '/src/styles',
       '@assets': '/src/assets',
+      '@router': '/src/router',
     }
   }
 })
