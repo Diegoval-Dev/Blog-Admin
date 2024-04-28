@@ -1,13 +1,19 @@
 import React from 'react'
 import '@styles/App.css'
-import Index from '@router/index'
+import { TokenProvider } from '@hooks/useToken'
+import { NavigationProvider } from '@hooks/useNavigate'
+import Router from '@router/index'
 
 function App() {
 
 
   return (
     <>
-      <Index></Index>
+      <TokenProvider>
+        <NavigationProvider>
+          <Router />
+        </NavigationProvider>
+      </TokenProvider>
     </>
   )
 }

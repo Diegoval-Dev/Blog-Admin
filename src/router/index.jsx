@@ -1,14 +1,15 @@
 import useToken from '@hooks/useToken'
 import useNavigate from '@hooks/useNavigate'
 
-import Login from '@components/Login'
+import Login from '@pages/Login'
 import Home from '@pages/Home'
 import EditPost from '../pages/EditPost'
+import Nav from '@components/Nav'
 
 const routes = {
     '/': {
         component: Home,
-        private: true
+        private: false
     },
     '/login': {
         component: Login,
@@ -46,10 +47,10 @@ function Router() {
 
     return (
     <>
-        
+        <Nav />
         <CurrentPage />
     </>
     )
 }
 
-export default routes
+export default Router

@@ -1,5 +1,6 @@
 import useToken from '@hooks/useToken';
 import useNavigate from '@hooks/useNavigate';
+import '@styles/Nav.css';
 
 const Nav = () => {
     const { isLoggedIn, getRawToken } = useToken();
