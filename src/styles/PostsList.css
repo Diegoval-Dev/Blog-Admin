@@ -4,3 +4,21 @@
     gap: 1.5rem;
     padding: 1rem;
 }
+
+.skeleton-posts{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 90vh;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.emptyPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    font-size: 1.5rem;
+    color: #666;
+}

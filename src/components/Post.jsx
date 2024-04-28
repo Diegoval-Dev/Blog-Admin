@@ -1,5 +1,6 @@
-import React from "react";
+
 import '@styles/Post.css';
+import PropTypes from 'prop-types';
 
 const Post = ({ post, onSelectPost }) => {
     const date = new Date(post.created_at);
@@ -37,6 +38,11 @@ const Post = ({ post, onSelectPost }) => {
             <p>{post.content}</p>
         </div>
     );
+};
+
+Post.propTypes = {
+    post: PropTypes.object.isRequired,
+    onSelectPost: PropTypes.func.isRequired,
 };
 
 export default Post;

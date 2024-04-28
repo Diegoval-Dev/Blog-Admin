@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import '@styles/Input.css';
 
-function Input({ label, type, value, onChange, placeholder }) {
+function Input({ label, type, onChange, placeholder }) {
+    const [value, setValue] = useState('');
     return (
         <div className="mb-3">
             <label className="form-label">{label}</label>
             <input
                 type={type}
                 className="form-control"
-                onChange={({ target: { value } }) => onChange(value)}
+                onChange={({ target: { value } }) => onChange(setValue(value))}
                 value={value || ''}
                 placeholder={placeholder}
             />

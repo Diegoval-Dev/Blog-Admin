@@ -1,6 +1,48 @@
+/* SkeletonPost.css */
+.skeleton-post-container {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 480px;
+}
 
-.skeleton-post {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+.skeleton-post-title,
+.skeleton-post-created,
+.skeleton-post-category,
+.skeleton-post-image,
+.skeleton-post-content {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton 1.5s infinite linear;
+}
+
+.skeleton-post-title {
+    height: 1.5rem;
+    width: 60%;
+    margin: 10px;
+}
+
+.skeleton-post-created,
+.skeleton-post-category {
+    height: 1rem;
+    width: 40%;
+    margin: 10px;
+}
+
+.skeleton-post-image {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+
+.skeleton-post-content {
+    height: 4rem;
+    width: 100%;
+    margin-top: 10px;
+    margin: 10px;
+}
+
+@keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }

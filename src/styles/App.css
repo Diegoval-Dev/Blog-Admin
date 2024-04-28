@@ -3,10 +3,7 @@
   padding: 0;
 }
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: var(--background);
   color: var(--white);
@@ -16,7 +13,7 @@
 :root {
   --background : #00181eff;
   --white: #f0f0f0ff;
-  --black: #00181e;
+  --black: #000e12;
   --primary : #cd913cff;
   --red: #4e1404;
   --green: #17220eff;

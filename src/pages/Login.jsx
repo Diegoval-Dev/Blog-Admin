@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Input from '@components/Input';
+import Button from '@components/Button';
 import useToken from '@hooks/useToken'
 import useNavigate from '@hooks/useNavigate'
+import '@styles/Login.css';
 
 const Login = () => {
     const {setToken} = useToken();
@@ -15,23 +17,25 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
-                label="Username"
-            />
-            <Input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                label="Password"
-            />
-            <button type="submit">Login</button>
-        </form>
+        <div className='login-page'>
+            <form className='form-login' onSubmit={handleSubmit}>
+                <Input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                    label="Username"
+                />
+                <Input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    label="Password"
+                />
+                <Button type="submit" text="Login"></Button>
+            </form>
+        </div>
     );
 };
 

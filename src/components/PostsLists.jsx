@@ -1,6 +1,7 @@
 import Posts from '@components/Post';
 import '@styles/PostsList.css';
-import useApi from '../hooks/useApi';
+import useApi from '@hooks/useApi';
+import SkeletonPost from '@components/SkeletonPost';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -15,7 +16,11 @@ const PostsList = () => {
     }, [response]);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return (
+            <div className='skeleton-posts'>
+                    <SkeletonPost />
+            </div>
+        );
     }
 
     if (response === null) {
@@ -23,7 +28,7 @@ const PostsList = () => {
     }
 
     if (posts.length === 0) {
-        return <div>Los Posts, estan vacios</div>;
+        return <div className='emptyPosts'>Los Posts, estan vacios</div>;
     }
 
     
