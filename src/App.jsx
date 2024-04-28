@@ -1,4 +1,3 @@
-import React from 'react'
 import '@styles/App.css'
 import { TokenProvider } from '@hooks/useToken'
 import { NavigationProvider } from '@hooks/useNavigate'

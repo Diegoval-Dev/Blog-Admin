@@ -1,0 +1,31 @@
+.post-container {
+    color: #fff;
+}
+
+.post-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.post-title span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.post-created {
+    color: #ca9f91ff;
+    font-size: 1rem;
+}
+
+.post-category {
+    font-size: 0.8rem;
+    color: #cd913cff;
+}
+
+.post-image {
+    width: 300px;
+    height: 300px;
+}

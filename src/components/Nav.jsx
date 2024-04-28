@@ -16,10 +16,10 @@ const Nav = () => {
         <nav>
             <ul>
                 <li>
-                    <a className= {page == '/' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/')} href='#/'>Home</a>
+                    <a className= {page == '/' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/')} >Home</a>
                 </li>
                 <li>
-                    <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')} href='#/login'>Login</a>
+                    <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')}  >Login</a>
                 </li>
                 {isLoggedIn && (
                     <>

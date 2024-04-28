@@ -17,6 +17,7 @@ const NavigationProvider = ({ children }) => {
     const navigate = (url) => {
         console.log('Pagina actual', url)
         setPage(url)
+        window.location.hash = url;
     }
 
     return (
@@ -26,7 +27,7 @@ const NavigationProvider = ({ children }) => {
     )
 }
 
-const useNavigate = () => {
+export const useNavigate = () => {
     return useContext(NavigationContext)
 }
 

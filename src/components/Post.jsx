@@ -1,4 +1,5 @@
 import React from "react";
+import '@styles/Post.css';
 
 const Post = ({ post, onSelectPost }) => {
     const date = new Date(post.created_at);
@@ -17,39 +18,20 @@ const Post = ({ post, onSelectPost }) => {
     return (
         <div
             key={post.id}
-            style={{ color: "#fff" }}
+            className="post-container"
             onClick={() => onSelectPost(post.id)}
         >
-            <h3
-                style={{
-                    color: "#fff",
-                    fontSize: "1.5rem",
-                    fontWeight: "600",
-                    marginBottom: "10px",
-                }}
-            >
-                <span
-                    style={{
-                        fontSize: "1.5rem",
-                        fontWeight: "600",
-                        marginBottom: "10px",
-                    }}
-                >
-                    {post.id} :{" "}
-                </span>
+            <h3 className="post-title">
+                <span>{post.id} :{" "}</span>
                 {post.title}
             </h3>
-            <p style={{ color: "#ca9f91ff", fontSize: "1rem" }}>
-                Creado: {dateTimeString}
-            </p>
-            <p style={{ fontSize: "0.8rem", color: "#cd913cff" }}>
-                categoria: {post.category}
-            </p>
+            <p className="post-created">Creado: {dateTimeString}</p>
+            <p className="post-category">categoria: {post.category}</p>
             {post.bannerImageB64 && (
                 <img
                     src={post.bannerImageB64}
                     alt="imagen"
-                    style={{ width: "300px", height: "300px" }}
+                    className="post-image"
                 />
             )}
             <p>{post.content}</p>
