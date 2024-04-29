@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const PostsList = () => {
-    const { response, error, isLoading } = useApi('https://api.diegovalenzuela.me/api/v1/posts', 'get');
+    const { response, error, isLoading, execute } = useApi('https://api.diegovalenzuela.me/api/v1/posts', 'get', null);
     const [posts, setPosts] = useState([]);
     
     useEffect(() => {
@@ -14,6 +14,10 @@ const PostsList = () => {
             setPosts(response.data);
         }
     }, [response]);
+
+    useEffect(() => {
+        execute();
+    }, []);
 
     if (isLoading) {
         return (
@@ -24,7 +28,7 @@ const PostsList = () => {
     }
 
     if (response === null) {
-        return <div>An error occurred: {error.message}</div>;
+        return <div>An error occurred: {error}</div>;
     }
 
     if (posts.length === 0) {

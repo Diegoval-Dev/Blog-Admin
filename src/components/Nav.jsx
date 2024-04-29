@@ -18,9 +18,13 @@ const Nav = () => {
                 <li>
                     <a className= {page == '/' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/')} >Home</a>
                 </li>
-                <li>
-                    <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')}  >Login</a>
-                </li>
+                {!isLoggedIn && (
+                    <>
+                        <li>
+                            <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')} href='#/login'>Login</a>
+                        </li>
+                    </>
+                )}
                 {isLoggedIn && (
                     <>
                         <li>

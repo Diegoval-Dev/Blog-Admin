@@ -5,6 +5,8 @@ import Login from '@pages/Login'
 import Home from '@pages/Home'
 import EditPost from '../pages/EditPost'
 import Nav from '@components/Nav'
+import AdminPage from '@pages/Admin'
+import Logout from '@pages/Logout'
 
 const routes = {
     '/': {
@@ -15,14 +17,16 @@ const routes = {
         component: Login,
         private: false
     },
+    '/admin': {
+        component: AdminPage,
+        private: true
+    },
     '/edit-post': {
         component: EditPost,
         private: true
     },
     '/logout': {
-        component: () => {
-            return <h1>Logout</h1>
-        },
+        component: Logout,
         private: true
     }
 }
