@@ -4,13 +4,19 @@ import '@styles/Input.css';
 
 function Input({ label, type, onChange, placeholder }) {
     const [value, setValue] = useState('');
+
+    const handleChange = (e) => {
+        setValue(e.target.value);
+        onChange(e);
+    };
+
     return (
         <div className="mb-3">
             <label className="form-label">{label}</label>
             <input
                 type={type}
                 className="form-control"
-                onChange={({ target: { value } }) => onChange(setValue(value))}
+                onChange={handleChange}
                 value={value || ''}
                 placeholder={placeholder}
             />
@@ -26,4 +32,4 @@ Input.propTypes = {
     placeholder: PropTypes.string.isRequired,
 };
 
-export default Input
+export default Input;

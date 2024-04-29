@@ -3,6 +3,8 @@ import Input from '@components/Input';
 import Button from '@components/Button';
 import useToken from '@hooks/useToken'
 import useNavigate from '@hooks/useNavigate'
+import useApi from '@hooks/useApi';
+import { useEffect } from 'react';
 import '@styles/Login.css';
 
 const Login = () => {
@@ -10,11 +12,22 @@ const Login = () => {
     const {navigate} = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const {response, error, isLoading, execute} = useApi('https://api.diegovalenzuela.me/api/v1/auth/login', 'post', null);
+
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`Username: ${username}, Password: ${password}`);
+        console.log({username, password})
+        execute({username, password});
     };
+
+    useEffect(() => {
+        if (response) {
+            setToken(response.token);
+            navigate('/');
+        }
+    }, [response]);
 
     return (
         <div className='login-page'>
