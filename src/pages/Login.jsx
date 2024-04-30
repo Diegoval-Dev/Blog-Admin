@@ -12,7 +12,7 @@ const Login = () => {
     const {setToken} = useToken();
     const {navigate} = useNavigate();
     const {response, error, isLoading, execute} = useApi('https://api.diegovalenzuela.me/api/v1/auth/login', 'post', null);
-    const [values, handleChange, resetForm] = useForm({username: '', password: ''});
+    const {values, handleChange, resetForm} = useForm({username: '', password: ''});
     
 
     const handleSubmit = (event) => {
@@ -28,7 +28,6 @@ const Login = () => {
             setToken(response.data.token);
             navigate('/admin');
         }
-        console.log("RES",response)
     }, [response]);
 
     return (

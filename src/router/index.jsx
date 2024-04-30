@@ -7,6 +7,8 @@ import EditPost from '../pages/EditPost'
 import Nav from '@components/Nav'
 import AdminPage from '@pages/Admin'
 import Logout from '@pages/Logout'
+import CreatePost from '@pages/CreatePost'
+import DeletePost from '../pages/DeletePost'
 
 const routes = {
     '/': {
@@ -23,6 +25,14 @@ const routes = {
     },
     '/edit-post': {
         component: EditPost,
+        private: true
+    },
+    '/create-post': {
+        component: CreatePost,
+        private: true
+    },
+    '/delete-post': {
+        component: DeletePost,
         private: true
     },
     '/logout': {

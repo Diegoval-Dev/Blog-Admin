@@ -21,20 +21,25 @@ const Nav = () => {
                 {!isLoggedIn && (
                     <>
                         <li>
-                            <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')} href='#/login'>Login</a>
+                            <a className= {page == '/login' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/login')}>Login</a>
                         </li>
                     </>
                 )}
                 {isLoggedIn && (
                     <>
                         <li>
-                            <a className= {page == '/edit-post' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/edit-post')} href='#/edit-post'>Edit Post</a>
+                            <a className= {page == '/edit-post' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/edit-post')}>Edit Post</a>
                         </li>
                         <li>
-                            <a className= {page == '/logout' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/logout')} href='#/logout'>Logout</a>
+                            <a className= {page == '/create-post' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/create-post')} >Create Post</a>
                         </li>
                         <li>
-                            <p>{decodedToken.name}</p>
+                            <a className= {page == '/delete-post' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/delete-post')} >Delete Post</a>
+                        </li>
+                        <li>
+                            <a className= {page == '/logout' ? "nav-link active": "nav-link unactive"} onClick={() => navigate('/logout')} >
+                                <img src='../assets/logout.png' alt='Logout' />
+                            </a>
                         </li>
                     </>
                 )}

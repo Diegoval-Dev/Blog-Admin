@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '@styles/Input.css';
 
-function Input({ label, type, onChange, placeholder, name }) {
+function Input({ label, type, onChange, placeholder, name, editValue = '' }) {
     const [value, setValue] = useState('');
 
     const handleChange = (e) => {
         setValue(e.target.value);
         onChange(e);
     };
+
+    useEffect(() => {
+        setValue(editValue);
+    }, [editValue]);
 
     return (
         <div className="mb-3">
@@ -28,10 +32,11 @@ function Input({ label, type, onChange, placeholder, name }) {
 Input.propTypes = {
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    editValue: PropTypes.string,
 };
 
 export default Input;
