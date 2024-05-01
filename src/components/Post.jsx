@@ -42,7 +42,7 @@ const Post = ({ post, onSelectPost }) => {
 
 Post.propTypes = {
     post: PropTypes.object.isRequired,
-    onSelectPost: PropTypes.func.isRequired,
+    onSelectPost: PropTypes.func,
 };
 
 export default Post;

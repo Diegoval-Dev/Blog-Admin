@@ -18,7 +18,7 @@ const useApi = (url, method, initialData = null, headers = null) => {
             } else if (method === 'put') {
                 res = await axios.put(url, data, { headers });
             } else if (method === 'delete') {
-                res = await axios.delete(url);
+                res = await axios.delete(url, { headers });
             }
             setResponse(res.data);
         } catch (error) {

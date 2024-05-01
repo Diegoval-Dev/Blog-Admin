@@ -4,6 +4,7 @@ import Button from '@components/Button';
 import useForm from '@hooks/useForm';
 import useApi from '@hooks/useApi';
 import useToken from '@hooks/useToken';
+import '@styles/DeletePost.css';
 
 const DeletePost = () => {
     const { token } = useToken();
@@ -16,13 +17,13 @@ const DeletePost = () => {
 
     const handleDeletePost = async (event) => {
         event.preventDefault();
-        console.log("el post que se eliminara es:",values);
-        //execute(values);
-        //resetForm();
+        console.log("el post que se eliminara es:",values.postId);
+        execute(values);
+        resetForm();
     }
 
     return (
-        <div>
+        <div className='deletePost-page'>
             <h2>Delete Post</h2>
             <form onSubmit={handleDeletePost}>
                 <Input
